@@ -1,23 +1,34 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { getVetsThunk } from '../store';
 
-export class Vet extends Component{
-  componentDidMount(){
-    console.log('logging from vets component did mount....')
+export class Vet extends Component {
+  componentDidMount() {
     this.props.getVets()
   }
-render() {
-  console.log('testing in the console')
-  return (
-    <div>
-      <h1>hellooo</h1>
-      <button>testButton</button>
-      {this.props.vets && console.log('vets', this.props.vets)}
-    </div>
-  )
-}}
+  render() {
+    console.log('testing in the console')
+    return (
+      <div>
+        <h1>All Vets</h1>
+        <div>
+          {this.props.vets && this.props.vets.map(vet => {
+            return (
+              <div className='card' key={vet.id}>
+                <h2>{vet.name}</h2>
+                <ul>
+                  <li>{vet.email}</li>
+                  <li>{vet.description}</li>
+                </ul>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    )
+  }
+}
 
 const mapState = (state) => {
   return {
