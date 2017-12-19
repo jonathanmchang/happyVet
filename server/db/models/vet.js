@@ -7,12 +7,12 @@ const Vet = db.define('vet', {
     allowNull: false,
   },
   email: {
-    type: Sequelize.String,
+    type: Sequelize.STRING,
     allowNull: false,
     unique: true
   },
   description: {
-    type: Sequelize.String,
+    type: Sequelize.STRING,
     allowNull: false
   },
   imageUrl: {
