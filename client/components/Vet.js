@@ -17,9 +17,9 @@ export class Vet extends Component {
             return (
               <div className='card' key={vet.id}>
                 <h2>{vet.name}</h2>
-                <ul>
-                  <li>{vet.email}</li>
-                  <li>{vet.description}</li>
+                <ul className='ul'>
+                  <li>Email: {vet.email}</li>
+                  <li>About Me: {vet.description}</li>
                 </ul>
               </div>
             )
