@@ -15,7 +15,7 @@ const Main = (props) => {
 
   return (
     <div>
-      <h1>BOILERMAKER</h1>
+      <h1>Happy Vet</h1>
       <nav>
         {
           isLoggedIn
@@ -23,11 +23,13 @@ const Main = (props) => {
               {/* The navbar will show these links after you log in */}
               <Link to="/home">Home</Link>
               <a href="#" onClick={handleClick}>Logout</a>
+              <Link to="/vets">Vets</Link>
             </div>
             : <div>
               {/* The navbar will show these links before you log in */}
               <Link to="/login">Login</Link>
               <Link to="/signup">Sign Up</Link>
+              <Link to="/vets">Vets</Link>
             </div>
         }
       </nav>
